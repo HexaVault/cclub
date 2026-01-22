@@ -97,12 +97,3 @@ class timeHandler:
   def __ipow__(self, value): raise SyntaxError("Invalid i- operation called")
   def __imatmul__(self, value): raise SyntaxError("Invalid i- operation called")
   
-
-
-z = timeHandler()#
-z.initalise()
-input()
-print(str(z))
-z.sleepTill(3)
-z -= 2
-print(str(z))
