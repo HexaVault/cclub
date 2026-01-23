@@ -128,13 +128,12 @@ tilingTest = [
 
 for value in tilingTest:
     odds = (100 - (genPara.worldGen.uniformity - value[0])) / 100
-    
     odds = max(odds, 0)
     odds **= adjustment
 
-    if abs(value[1][0]) < abs(value[1][1]):
+    if abs(value[1][0]) != abs(value[1][1]) and odds != 0:
         odds += oddsBoost
-    elif abs(value[1][0]) == abs(value[1][1]):
+    elif odds != 0:
         odds += fiftyfifty() * oddsBoost
 
     if uniform(0, 1) <= odds and genPara.worldGen.uniformity <= value[2]:
